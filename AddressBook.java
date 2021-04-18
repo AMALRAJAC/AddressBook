@@ -2,9 +2,7 @@ import java.io.*;
 import java.util.*;
 
 public class AddressBook {
-	String Name_check = null;
     private ArrayList<Contact> friends; // An array of Contacts - each stores info for one friend
-    private HashMap<String,ArrayList<Contact>>book=new HashMap<String,ArrayList<Contact>>();
     // Create an empty AddressBook
     public AddressBook() {
         friends = new ArrayList<Contact>();
@@ -12,27 +10,15 @@ public class AddressBook {
 
     // Add a contact that's passed in as a parameter.
     public void addContact(Contact contact) {
-    	Scanner sc=new Scanner(System.in);
-    	//enter the name of book
-    	System.out.println("enter the book name");
-    	String Name=sc.nextLine();
-    	//add contact to addressbook
-        if(!book.keySet().contains(Name)) {
-        	friends.clear();
-        	book.put(Name, new ArrayList<Contact>());
         	friends.add(contact);
-        	book.get(Name).addAll(friends);
-        }else {
-        	friends.clear();
-        	friends.add(contact);
-        	book.get(Name).addAll(friends);
-        }
-        
+        	
     }
 
     // Print out info on all contacts using method Contact class.
     public void printContacts() {
-        System.out.println(book);
+        for (int i=0;i<friends.size();i++) {
+            System.out.println(friends.get(i));
+        }
     }
 
     // Returns the number of friends currently in AddressBook
@@ -52,26 +38,15 @@ public class AddressBook {
 
     // Deletes a contact with name s, if one is in the AddressBook.
     public void deleteContact(String s) {
-    	Scanner sc=new Scanner(System.in);
-    	friends.clear();
         int place = haveContact(s);
-        System.out.println("enter the book name");
-        String name=sc.nextLine();
-        friends.addAll(book.get(name));
-        if (book.keySet().contains(name)) {
-        	System.out.println("deleted");
+        if (place>=0) {
             friends.remove(place);
         }
-        book.replace(name, friends);
     }
     public void modifyContact(String s,int value) {
     	Scanner sc=new Scanner(System.in);
-    	friends.clear();
         int place = haveContact(s);
-        System.out.println("enter the book name");
-        String name=sc.nextLine();
-        friends.addAll(book.get(name));
-        if (book.keySet().contains(name)) {
+        if (place>=0) {
         	final int modify_name=1;
         	final int modify_address=2;
         	final int modify_city=3;
@@ -110,6 +85,5 @@ public class AddressBook {
             
             }
          }
-        book.replace(name, friends);
     }
 }
