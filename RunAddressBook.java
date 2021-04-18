@@ -45,20 +45,12 @@ public class RunAddressBook {
 		    		System.out.println("Sorry, can not add anyone, your blackbook is full.");
 	    	}
 	    	else if (choice == 2) {
-	    		System.out.println("What is the name of the contact you want to modify?");
-				System.out.println("Enter your friend\'s name:");
-				String name = stdin.next();
-				System.out.println("1.modify name\n2.modify address\n3.modify city\n4.modify state\n5.modify zip\n6.phone number");
-	    		int value = stdin.nextInt();
-	    		blackbook.modifyContact(name,value);
-	    	}
-	    	else if (choice == 3) {
 	    		System.out.println("You have " + blackbook.numContacts() + " contacts.");
 	    	}
-	    	else if (choice == 4) {
+	    	else if (choice == 3) {
 	    		blackbook.printContacts();
 	    			    	}
-	    	else if(choice !=5) {
+	    	else if(choice !=4) {
 				System.out.println("Sorry, that was an invalid menu choice, try again.");
 			 }
 			menu();
@@ -68,10 +60,9 @@ public class RunAddressBook {
 
     public static void menu() {
 		System.out.println("1.Add a new contact to your address book.");
-		System.out.println("2.modify contact in your addressbook.");
-		System.out.println("3.Print out the number of contacts you have.");
-		System.out.println("4.Print out information of all of your contacts.");
-		System.out.println("5.Quit.");
+		System.out.println("2.Print out the number of contacts you have.");
+		System.out.println("3.Print out information of all of your contacts.");
+		System.out.println("4.Quit.");
 		System.out.println("Enter your menu choice:");
     }
 }
