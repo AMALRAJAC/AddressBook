@@ -35,14 +35,7 @@ public class AddressBook {
                 return i;
         return 0;
     }
-
-    // Deletes a contact with name s, if one is in the AddressBook.
-    public void deleteContact(String s) {
-        int place = haveContact(s);
-        if (place>=0) {
-            friends.remove(place);
-        }
-    }
+    //modify a contact
     public void modifyContact(String s,int value) {
     	Scanner sc=new Scanner(System.in);
         int place = haveContact(s);
