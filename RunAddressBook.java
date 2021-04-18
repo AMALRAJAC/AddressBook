@@ -12,7 +12,6 @@ public class RunAddressBook {
  		// Menu driven loop.
 		menu();
 		int choice = stdin.nextInt();
-		while (choice!=6) {
 
 	    	// Only adds contact if there is room in AddressBook blackbook.
 	    	if (choice == 1) {
@@ -72,7 +71,7 @@ public class RunAddressBook {
 			menu();
 	    	choice = stdin.nextInt();
 		}
-    }
+    
 
     public static void menu() {
 		System.out.println("1.Add a new contact to your address book.");
