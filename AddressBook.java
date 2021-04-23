@@ -45,7 +45,6 @@ public class AddressBook {
         city.put(cityName, new ArrayList<Contact>());
         city.get(cityName).addAll(person1);
         System.out.println(city);
-        System.out.println("total number of contacts in "+cityName+" is= "+city.get(cityName).size());
     }
     //contacts in state
     public void contactInState(String Name,String StateName ){
@@ -54,7 +53,6 @@ public class AddressBook {
         state.put(StateName, new ArrayList<Contact>());
         state.get(StateName).addAll(person1);
         System.out.println(state);
-        System.out.println("total number of contacts in "+StateName+" is= "+state.get(StateName).size());
     }
 
     // Print out info on all contacts using method Contact class.
