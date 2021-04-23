@@ -7,8 +7,7 @@ public class AddressBook {
     String Name_check = null;
     private ArrayList<Contact> friends; // An array of Contacts - each stores info for one friend
     private HashMap<String,ArrayList<Contact>>book=new HashMap<String,ArrayList<Contact>>();
-    private HashMap<String,ArrayList<Contact>>city=new HashMap<String,ArrayList<Contact>>();
-    private HashMap<String,ArrayList<Contact>>state=new HashMap<String,ArrayList<Contact>>();
+  
     // Create an empty AddressBook
     public AddressBook() {
         friends = new ArrayList<Contact>();
@@ -39,20 +38,15 @@ public class AddressBook {
     }
     //contacts in city
     public void contactInCity(String name,String cityName ){
-        city.clear();
         List person1 = book.get(name).stream().filter(e -> e.getCity().equals(cityName)).collect(Collectors.toList());
         System.out.println(person1);
-        city.put(cityName, new ArrayList<Contact>());
-        city.get(cityName).addAll(person1);
-        System.out.println(city);
+        
     }
     //contacts in state
     public void contactInState(String Name,String StateName ){
         List person1 = book.get(Name).stream().filter(e -> e.getCity().equals(StateName)).collect(Collectors.toList());
         System.out.println(person1);
-        state.put(StateName, new ArrayList<Contact>());
-        state.get(StateName).addAll(person1);
-        System.out.println(state);
+       
     }
 
     // Print out info on all contacts using method Contact class.
