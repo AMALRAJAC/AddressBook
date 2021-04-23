@@ -1,20 +1,24 @@
+
+
+import java.util.Objects;
+
 public class Contact {
 
-		private String fullname;
-	    private String address;
-	    private String city;
-	    private String state;
-	    private int zip;
-	    private int phone;
+    private String fullname;
+    private String address;
+    private String city;
+    private String state;
+    private int zip;
+    private int phone;
 
     // Creates Contact object based on parameters.
     public Contact(String fullname, String address, String city, String state, int zip, int phone) {
-    	this.fullname = fullname;
+        this.fullname = fullname;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
-        this.phone = phone; 
+        this.phone = phone;
     }
 
     public String getFullname() {
@@ -54,6 +58,34 @@ public class Contact {
         this.phone = phone;
     }
 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj == null || obj.getClass() != this.getClass()) {
+            return false;
+        }
+
+        Contact contact = (Contact) obj;
+        return (fullname == contact.fullname
+                || (fullname != null && fullname.equals(contact.getFullname())))
+                && (address == contact.address
+                || (address != null && address .equals(contact.getAddress())))
+                && (city == contact.city
+                || (city != null && city .equals(contact.getCity())))
+                && (state == contact.state
+                || (state != null && state .equals(contact.getState())))
+                && (zip == contact.zip)
+                && (phone==contact.phone)
+                ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(fullname,address,city,state,zip,phone);
+    }
 
     @Override
     public String toString() {
