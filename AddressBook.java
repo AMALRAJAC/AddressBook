@@ -36,18 +36,7 @@ public class AddressBook {
         }
 
     }
-    //contacts in city
-    public void contactInCity(String name,String cityName ){
-        List person1 = book.get(name).stream().filter(e -> e.getCity().equals(cityName)).collect(Collectors.toList());
-        System.out.println(person1);
-        
-    }
-    //contacts in state
-    public void contactInState(String Name,String StateName ){
-        List person1 = book.get(Name).stream().filter(e -> e.getCity().equals(StateName)).collect(Collectors.toList());
-        System.out.println(person1);
-       
-    }
+ 
 
     // Print out info on all contacts using method Contact class.
     public void printContacts( ) {

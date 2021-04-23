@@ -12,7 +12,7 @@ public class RunAddressBook {
         // Menu driven loop.
         menu();
         int choice = stdin.nextInt();
-        while (choice != 7) {
+        while (choice != 6) {
 
             // Only adds contact if there is room in AddressBook blackbook.
             if (choice == 1) {
@@ -61,26 +61,8 @@ public class RunAddressBook {
                     System.out.println("You have " + blackbook.numContacts(Name) + " contacts.");
                 } else if (choice == 5) {
                     blackbook.printContacts();
-                } else if (choice == 6) {
-                    System.out.println("search contact by city or state");
-                    System.out.println("enter the addressBook name");
-                    String Name2 = stdin.nextLine();
-                    String Name = stdin.nextLine();
-                    System.out.println("enter 1 to search by city \n enter 2 to search by state");
-                    int check = stdin.nextInt();
-                    if (check == 1) {
-                        System.out.println("enter the city name");
-                        String CityName1 = stdin.nextLine();
-                        String CityName = stdin.nextLine();
-                        blackbook.contactInCity(Name, CityName);
-                    } else if (check == 2) {
-                        System.out.println("enter the state name");
-                        String StateName = stdin.nextLine();
-                        blackbook.contactInState(Name, StateName);
-                    } else {
-                        System.out.println("invalid input");
-                    }
-                } else if (choice != 7) {
+                } else if (choice != 6) {
+                  
                     System.out.println("Sorry, that was an invalid menu choice, try again.");
                     System.exit(0);
                 }
