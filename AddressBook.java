@@ -63,27 +63,7 @@ public class AddressBook {
         System.out.println(NameSortedList);
 
     }
-    public void sortCity(String Name){
-
-        List < Contact > NameSortedList = book.get(Name).stream()
-                .sorted((o1, o2) ->(int)(o1.getCity().compareTo(o2.getCity()))).collect(Collectors.toList()); //ascending order
-        System.out.println(NameSortedList);
-
-    }
-    public void sortState(String Name){
-
-        List < Contact > NameSortedList = book.get(Name).stream()
-                .sorted((o1, o2) ->(int)(o1.getState().compareTo(o2.getState()))).collect(Collectors.toList()); //ascending order
-        System.out.println(NameSortedList);
-
-    }
-    public void sortZip(String Name){
-
-        List < Contact > NameSortedList = book.get(Name).stream()
-                .sorted((o1, o2) -> (int)(o1.getZip() - o2.getZip())).collect(Collectors.toList()); //ascending order
-        System.out.println(NameSortedList);
-
-    }
+   
 
     // Print out info on all contacts using method Contact class.
     public void printContacts( ) {

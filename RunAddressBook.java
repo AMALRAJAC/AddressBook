@@ -86,20 +86,9 @@ public class RunAddressBook {
                 System.out.println("enter the book name");
                 String bokName= stdin.nextLine();
                 String  BookName= stdin.nextLine();
-                System.out.println("enter 1 to sort according to name");
-                System.out.println("enter 2 to sort according to city");
-                System.out.println("enter 3 to sort according to state");
-                System.out.println("enter 4 to sort according to zip");
-                int check=stdin.nextInt();
-                if(check==1){
+               
                     blackbook.sortName(BookName);
-                }else if(check==2){
-                    blackbook.sortCity(BookName);
-                }else if(check==3){
-                    blackbook.sortState(BookName);
-                }else{
-                    blackbook.sortZip(BookName);
-                }
+              
             }
              else if (choice != 8) {
                     System.out.println("Sorry, that was an invalid menu choice, try again.");
