@@ -7,7 +7,8 @@ public class AddressBook {
     String Name_check = null;
     private ArrayList<Contact> friends; // An array of Contacts - each stores info for one friend
     private HashMap<String,ArrayList<Contact>>book=new HashMap<String,ArrayList<Contact>>();
-  
+    private HashMap<String,ArrayList<Contact>>city=new HashMap<String,ArrayList<Contact>>();
+    private HashMap<String,ArrayList<Contact>>state=new HashMap<String,ArrayList<Contact>>();
     // Create an empty AddressBook
     public AddressBook() {
         friends = new ArrayList<Contact>();
@@ -36,7 +37,53 @@ public class AddressBook {
         }
 
     }
- 
+    //contacts in city
+    public void contactInCity(String name,String cityName ){
+        city.clear();
+        List person1 = book.get(name).stream().filter(e -> e.getCity().equals(cityName)).collect(Collectors.toList());
+        System.out.println(person1);
+        city.put(cityName, new ArrayList<Contact>());
+        city.get(cityName).addAll(person1);
+        System.out.println(city);
+        System.out.println("total number of contacts in "+cityName+" is= "+city.get(cityName).size());
+    }
+    //contacts in state
+    public void contactInState(String Name,String StateName ){
+        List person1 = book.get(Name).stream().filter(e -> e.getCity().equals(StateName)).collect(Collectors.toList());
+        System.out.println(person1);
+        state.put(StateName, new ArrayList<Contact>());
+        state.get(StateName).addAll(person1);
+        System.out.println(state);
+        System.out.println("total number of contacts in "+StateName+" is= "+state.get(StateName).size());
+    }
+    public void sortName(String Name){
+
+        List < Contact > NameSortedList = book.get(Name).stream()
+                .sorted((o1, o2) ->(int)(o1.getFullname().compareTo(o2.getFullname()))).collect(Collectors.toList()); //ascending order
+        System.out.println(NameSortedList);
+
+    }
+    public void sortCity(String Name){
+
+        List < Contact > NameSortedList = book.get(Name).stream()
+                .sorted((o1, o2) ->(int)(o1.getCity().compareTo(o2.getCity()))).collect(Collectors.toList()); //ascending order
+        System.out.println(NameSortedList);
+
+    }
+    public void sortState(String Name){
+
+        List < Contact > NameSortedList = book.get(Name).stream()
+                .sorted((o1, o2) ->(int)(o1.getState().compareTo(o2.getState()))).collect(Collectors.toList()); //ascending order
+        System.out.println(NameSortedList);
+
+    }
+    public void sortZip(String Name){
+
+        List < Contact > NameSortedList = book.get(Name).stream()
+                .sorted((o1, o2) -> (int)(o1.getZip() - o2.getZip())).collect(Collectors.toList()); //ascending order
+        System.out.println(NameSortedList);
+
+    }
 
     // Print out info on all contacts using method Contact class.
     public void printContacts( ) {

@@ -1,4 +1,5 @@
 
+
 import java.util.*;
 
 public class RunAddressBook {
@@ -12,7 +13,7 @@ public class RunAddressBook {
         // Menu driven loop.
         menu();
         int choice = stdin.nextInt();
-        while (choice != 6) {
+        while (choice != 8) {
 
             // Only adds contact if there is room in AddressBook blackbook.
             if (choice == 1) {
@@ -61,8 +62,46 @@ public class RunAddressBook {
                     System.out.println("You have " + blackbook.numContacts(Name) + " contacts.");
                 } else if (choice == 5) {
                     blackbook.printContacts();
-                } else if (choice != 6) {
-                  
+                } else if (choice == 6) {
+                    System.out.println("search contact by city or state");
+                    System.out.println("enter the addressBook name");
+                    String Name2 = stdin.nextLine();
+                    String Name = stdin.nextLine();
+                    System.out.println("enter 1 to search by city \n enter 2 to search by state");
+                    int check = stdin.nextInt();
+                    if (check == 1) {
+                        System.out.println("enter the city name");
+                        String CityName1 = stdin.nextLine();
+                        String CityName = stdin.nextLine();
+                        blackbook.contactInCity(Name, CityName);
+                    } else if (check == 2) {
+                        System.out.println("enter the state name");
+                        String StateName = stdin.nextLine();
+                        blackbook.contactInState(Name, StateName);
+                    } else {
+                        System.out.println("invalid input");
+                    }
+                }
+             else if(choice==7){
+                System.out.println("enter the book name");
+                String bokName= stdin.nextLine();
+                String  BookName= stdin.nextLine();
+                System.out.println("enter 1 to sort according to name");
+                System.out.println("enter 2 to sort according to city");
+                System.out.println("enter 3 to sort according to state");
+                System.out.println("enter 4 to sort according to zip");
+                int check=stdin.nextInt();
+                if(check==1){
+                    blackbook.sortName(BookName);
+                }else if(check==2){
+                    blackbook.sortCity(BookName);
+                }else if(check==3){
+                    blackbook.sortState(BookName);
+                }else{
+                    blackbook.sortZip(BookName);
+                }
+            }
+             else if (choice != 8) {
                     System.out.println("Sorry, that was an invalid menu choice, try again.");
                     System.exit(0);
                 }
@@ -79,7 +118,8 @@ public class RunAddressBook {
             System.out.println("4.Print out the number of contacts you have.");
             System.out.println("5.Print out information of all of your contacts.");
             System.out.println("6.print contact according to city or state");
-            System.out.println("7.Quit.");
+            System.out.println("7.Sort");
+            System.out.println("8.Quit.");
             System.out.println("Enter your menu choice:");
         }
     }
