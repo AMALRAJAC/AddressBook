@@ -1,0 +1,18 @@
+////print contacts////
+H[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+H[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+L[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+K[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+H[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+H[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+L[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+K[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+¾{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+ö{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+R{kozhi=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+Q{kera=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+ö{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+H[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+L[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+K[name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+3

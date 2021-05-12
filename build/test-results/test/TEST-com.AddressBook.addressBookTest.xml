@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.AddressBook.addressBookTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-05-12T03:31:24" hostname="DESKTOP-9F42HSG" time="0.33">
+  <properties/>
+  <testcase name="addContactsToTheAddressBook_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.201"/>
+  <testcase name="addContactsToTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.007"/>
+  <testcase name="deleteContactsFromTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.006"/>
+  <testcase name="sortCityContactsInHashmap_shouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.007"/>
+  <testcase name="sortStateContactsInHashmap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.01"/>
+  <testcase name="modifyContactsInHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.005"/>
+  <testcase name="readAndWriteToFile_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.072"/>
+  <system-out><![CDATA[////print contacts////
+[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+{kozhi=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+{kera=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+3
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
