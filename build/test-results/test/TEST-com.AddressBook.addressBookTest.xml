@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.AddressBook.addressBookTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2021-05-12T03:31:24" hostname="DESKTOP-9F42HSG" time="0.33">
+<testsuite name="com.AddressBook.addressBookTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-05-12T08:41:33" hostname="DESKTOP-9F42HSG" time="0.499">
   <properties/>
-  <testcase name="addContactsToTheAddressBook_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.201"/>
-  <testcase name="addContactsToTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.007"/>
-  <testcase name="deleteContactsFromTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.006"/>
-  <testcase name="sortCityContactsInHashmap_shouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.007"/>
-  <testcase name="sortStateContactsInHashmap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.01"/>
+  <testcase name="addContactsToTheAddressBook_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.173"/>
+  <testcase name="addContactsToTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.017"/>
+  <testcase name="readAndWriteTojsonFile_ShuldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.217"/>
+  <testcase name="deleteContactsFromTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.004"/>
+  <testcase name="readAndWriteToCSVFile_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.015"/>
+  <testcase name="sortCityContactsInHashmap_shouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.021"/>
+  <testcase name="sortStateContactsInHashmap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.005"/>
   <testcase name="modifyContactsInHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.005"/>
-  <testcase name="readAndWriteToFile_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.072"/>
-  <system-out><![CDATA[////print contacts////
-[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+  <testcase name="readAndWriteToFile_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.015"/>
+  <system-out><![CDATA[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
 [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
 [name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
 [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
@@ -18,7 +19,12 @@
 [name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
 [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
 {Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+[{"Book_name":"personal","fullname":"amal","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048},{"Book_name":"personal","fullname":"amma","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048},{"Book_name":"Friends","fullname":"amarnadh","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048},{"Book_name":"Friends","fullname":"anandhu","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048}]
 {Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
+3
 {kozhi=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
 {kera=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
 {Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}

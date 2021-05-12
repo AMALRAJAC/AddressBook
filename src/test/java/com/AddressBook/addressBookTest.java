@@ -19,26 +19,10 @@ public class addressBookTest {
         AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048));
         AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048));
         int size=AddressBook.sizeOfAddressBook();
-        System.out.println("////print contacts////");
+       // System.out.println("////print contacts////");
         AddressBook.printContactsInArraylist();
         Assertions.assertEquals(8,size);
     }
-//    @Test
-//    public void deleteContactsFromTheAddressbook_ShouldReturnSize(){
-//        AddressBook.deleteContactsFromTheAddressbook("amma");
-//        int size=AddressBook.sizeOfAddressBook();
-//        System.out.println("////print contacts afrer deletion operation////");
-//        AddressBook.printContactsInArraylist();
-//        Assertions.assertEquals(3,size);
-//    }
-//    @Test
-//    public void modifyContactsFromAddressbokk_shouldReturnSize(){
-//        AddressBook.modifyContactsInAddressBook("amal","amalrajac");
-//        int size=AddressBook.sizeOfAddressBook();
-//        System.out.println("////print contacts after modification operation////");
-//        AddressBook.printContactsInArraylist();
-//        Assertions.assertEquals(3,size);
-//    }
     @Test
     public void addContactsToTheHashMap_ShouldReturnSize() throws IOException {
         AddressBook.addContactsToTheHashMap();
@@ -77,6 +61,20 @@ public class addressBookTest {
         long count=AddressBookIO.countEntries();
         System.out.println(count);
         Assertions.assertEquals(3,count);
+    }
+    @Test
+    public  void readAndWriteToCSVFile_ShouldReturnSize(){
+        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingCSVFile();
+        // AddressBookIO.printData();
+        long count=AddressBookIO.countcsvEntries();
+        System.out.println(count);
+        Assertions.assertEquals(3,count);
+    }
+    @Test
+    public  void readAndWriteTojsonFile_ShuldReturnSize() throws IOException {
+        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
+       AddressBookIO.readDataUsingJsonFile();
     }
 
 

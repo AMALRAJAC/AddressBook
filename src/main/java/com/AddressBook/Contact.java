@@ -1,5 +1,4 @@
 package com.AddressBook;
-
 import java.util.Objects;
 
 public class Contact {
