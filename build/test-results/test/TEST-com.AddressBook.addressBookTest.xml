@@ -1,37 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.AddressBook.addressBookTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2021-05-12T08:41:33" hostname="DESKTOP-9F42HSG" time="0.499">
+<testsuite name="com.AddressBook.addressBookTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2021-05-14T16:44:56" hostname="DESKTOP-9F42HSG" time="5.0">
   <properties/>
-  <testcase name="addContactsToTheAddressBook_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.173"/>
-  <testcase name="addContactsToTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.017"/>
-  <testcase name="readAndWriteTojsonFile_ShuldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.217"/>
-  <testcase name="deleteContactsFromTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.004"/>
-  <testcase name="readAndWriteToCSVFile_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.015"/>
-  <testcase name="sortCityContactsInHashmap_shouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.021"/>
+  <testcase name="addContactsToTheAddressBook_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="4.121"/>
+  <testcase name="deleteContactsFromTheHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.34"/>
+  <testcase name="sortCityContactsInHashmap_shouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.004"/>
   <testcase name="sortStateContactsInHashmap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.005"/>
-  <testcase name="modifyContactsInHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.005"/>
-  <testcase name="readAndWriteToFile_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.015"/>
-  <system-out><![CDATA[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
-[{"Book_name":"personal","fullname":"amal","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048},{"Book_name":"personal","fullname":"amma","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048},{"Book_name":"Friends","fullname":"amarnadh","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048},{"Book_name":"Friends","fullname":"anandhu","address":"akko","city":"kozhi","state":"kera","zip":123,"phone":9048}]
-{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
-[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-3
-{kozhi=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
-{kera=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
-{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048], [name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]]}
-[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-[name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]
-3
+  <testcase name="modifyContactsInHashMap_ShouldReturnSize()" classname="com.AddressBook.addressBookTest" time="0.515"/>
+  <system-out><![CDATA[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]], personal=[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]}
+[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+Name: amal
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: amma
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: amarnadh
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: anandhu
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+"{\"fullname\":\"amal\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"amma\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"amarnadh\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"anandhu\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@b0b7899
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@5c4c81f9
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@246cb0bb
+retrieve data
+[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@63f580a
+retrieve data according to date
+[[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@2ba743e5
+4
+................list.............
+{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]}
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+Name: amma
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: amarnadh
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: anandhu
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+"{\"fullname\":\"amma\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"amarnadh\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"anandhu\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@45bef1f4
+{kozhi=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]}
+{kera=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]}
+{Friends=[[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14], [name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]], personal=[[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]]}
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+Name: amma
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: amarnadh
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+Name: amalraj
+address: akko
+city: kozhi
+state: kera
+zip: 123
+phone: 9048
+date: 2021-05-14
+***********************
+"{\"fullname\":\"amma\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"amarnadh\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+"{\"fullname\":\"amalraj\",\"address\":\"akko\",\"city\":\"kozhi\",\"state\":\"kera\",\"zip\":123,\"phone\":9048,\"startDate\":{\"year\":2021,\"month\":5,\"day\":14}}"
+Connecting to database:jdbc:mysql://localhost:3306/addressbook_database?characterEncoding=latin1
+Connection is successfull!!!!!com.mysql.cj.jdbc.ConnectionImpl@5a880c49
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

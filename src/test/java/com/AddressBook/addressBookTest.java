@@ -4,40 +4,58 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.Scanner;
+import java.sql.SQLException;
+import java.time.LocalDate;
 
 public class addressBookTest {
     @Test
-    public void addContactsToTheAddressBook_ShouldReturnSize(){
+    public void addContactsToTheAddressBook_ShouldReturnSize() throws IOException, SQLException {
 
-        AddressBook.addContactsToAddressBook(new Contact("personal","amal","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("personal","amma","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("personal","amal","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("personal","amma","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048));
+        AddressBook.addContactsToAddressBook(new Contact("personal","amal","akko","kozhi","kera",123,9048, LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("personal","amma","akko","kozhi","kera",123,9048,LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048,LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048,LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("personal","amal","akko","kozhi","kera",123,9048,LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("personal","amma","akko","kozhi","kera",123,9048,LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048,LocalDate.now()));
+        AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048,LocalDate.now()));
         int size=AddressBook.sizeOfAddressBook();
-       // System.out.println("////print contacts////");
         AddressBook.printContactsInArraylist();
         Assertions.assertEquals(8,size);
-    }
-    @Test
-    public void addContactsToTheHashMap_ShouldReturnSize() throws IOException {
         AddressBook.addContactsToTheHashMap();
-        int size=AddressBook.getSizeOfHashMap();
-        Assertions.assertEquals(2,size);
+        AddressBookIO.writeData(AddressBook.contactArrayList);
+        AddressBookIO.readData();
+        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingCSVFile();
+        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingJsonFile();
+        AddressBookDB.addContactsToDataBase(AddressBook.contactArrayList);
+        int size1=AddressBook.getSizeOfHashMap();
+        Assertions.assertEquals(2,size1);
     }
     @Test
-    public void deleteContactsFromTheHashMap_ShouldReturnSize() throws IOException {
+    public void deleteContactsFromTheHashMap_ShouldReturnSize() throws IOException, SQLException {
         AddressBook.deleteContactsFromHashMap("amal");
+        AddressBookIO.writeData(AddressBook.contactArrayList);
+        AddressBookIO.readData();
+        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingCSVFile();
+        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingJsonFile();
+        AddressBookDB.deleteDataFromDatabase("amal");
         int size=AddressBook.getsizeOfContactsInHashmap("personal");
         Assertions.assertEquals(1,size);
     }
     @Test
     public void modifyContactsInHashMap_ShouldReturnSize() throws IOException {
         AddressBook.modifyContactsFromHashmap("anandhu","amalraj");
+        AddressBookIO.writeData(AddressBook.contactArrayList);
+        AddressBookIO.readData();
+        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingCSVFile();
+        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
+        AddressBookIO.readDataUsingJsonFile();
+        AddressBookDB.modifyDatafromDatabase("anandhu","amalraj");
         int size=AddressBook.getsizeOfContactsInHashmap("Friends");
         Assertions.assertEquals(2,size);
     }
@@ -53,29 +71,5 @@ public class addressBookTest {
         int size=AddressBook.getCountByState("kera");
         Assertions.assertEquals(1,size);
     }
-    @Test
-    public  void readAndWriteToFile_ShouldReturnSize(){
-        AddressBookIO.writeData(AddressBook.contactArrayList);
-        AddressBookIO.readData();
-       // AddressBookIO.printData();
-        long count=AddressBookIO.countEntries();
-        System.out.println(count);
-        Assertions.assertEquals(3,count);
-    }
-    @Test
-    public  void readAndWriteToCSVFile_ShouldReturnSize(){
-        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingCSVFile();
-        // AddressBookIO.printData();
-        long count=AddressBookIO.countcsvEntries();
-        System.out.println(count);
-        Assertions.assertEquals(3,count);
-    }
-    @Test
-    public  void readAndWriteTojsonFile_ShuldReturnSize() throws IOException {
-        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
-       AddressBookIO.readDataUsingJsonFile();
-    }
-
 
 }

@@ -1,4 +1,5 @@
 package com.AddressBook;
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Contact {
@@ -9,9 +10,10 @@ public class Contact {
     private String state;
     private int zip;
     private int phone;
+    LocalDate startDate;
 
     // Creates Contact object based on parameters.
-    public Contact(String Book_name,String fullname, String address, String city, String state, int zip, int phone) {
+    public Contact(String Book_name, String fullname, String address, String city, String state, int zip, int phone, LocalDate startDate) {
         this.Book_name=Book_name;
         this.fullname = fullname;
         this.address = address;
@@ -19,7 +21,16 @@ public class Contact {
         this.state = state;
         this.zip = zip;
         this.phone = phone;
+        this.startDate=startDate;
     }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+    public void setStartDate(LocalDate startDate){
+        this.startDate=startDate;
+    }
+
     public String getBook_name(){
         return Book_name;
     }
@@ -93,6 +104,6 @@ public class Contact {
     public String toString() {
         return "[name=" + this.fullname + ", Address=" + this.address + ", City="
                 + this.city + ", state=" + this.state + ", zip=" + this.zip
-                + ", phone=" + this.phone + "]";
+                + ", phone=" + this.phone +",date="+this.startDate+ "]";
     }
 }
