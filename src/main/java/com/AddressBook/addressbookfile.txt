@@ -1,3 +1,4 @@
-[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
-[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
-[name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-14]
+[name=amal, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-17]
+[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-17]
+[name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-17]
+[name=anandhu, Address=akko, City=kozhi, state=kera, zip=123, phone=9048,date=2021-05-17]

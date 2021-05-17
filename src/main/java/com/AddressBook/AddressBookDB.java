@@ -40,9 +40,6 @@ public class AddressBookDB {
         }catch(SQLException e){
             e.printStackTrace();
         }
-        showData();
-        retrievedAccordingToDate();
-        getCountbycity( "kozhi");
     }
     public static void deleteDataFromDatabase(String name) throws SQLException {
         String sql="DELETE FROM addressbook_info WHERE fullname='"+name+"';";
@@ -134,6 +131,4 @@ public class AddressBookDB {
         }
 
     }
-
-
 }

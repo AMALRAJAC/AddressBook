@@ -1,1 +1,0 @@
-[name=amma, Address=akko, City=kozhi, state=kera, zip=123, phone=9048][name=amarnadh, Address=akko, City=kozhi, state=kera, zip=123, phone=9048][name=amalraj, Address=akko, City=kozhi, state=kera, zip=123, phone=9048]

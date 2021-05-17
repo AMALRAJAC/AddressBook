@@ -1,7 +1,5 @@
 package com.AddressBook;
 
-
-import com.AddressBook.pojo.PojoClass;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
@@ -17,22 +15,32 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AddressBookIO {
+public class addressBookFile {
     private static final String FILE_NAME = "C:\\Users\\CRACKERJACK\\IdeaProjects\\AddressBook\\src\\main\\java\\com\\AddressBook\\addressbookfile.txt";
     private static final String SAMPLE_CSV_FILE_PATH = "C:\\Users\\CRACKERJACK\\IdeaProjects\\AddressBook\\src\\main\\java\\com\\AddressBook\\AddressBookFileCSV.csv";
     private static final String JSON_FILE_PATH = "C:\\Users\\CRACKERJACK\\IdeaProjects\\AddressBook\\src\\main\\java\\com\\AddressBook\\AddressBook.json";
 
-    public static void writeData(ArrayList<Contact> employeePayrollList) {
+    public static void writeData(ArrayList<Contact> contactArrayList) {
         StringBuffer empBuffer = new StringBuffer();
-        employeePayrollList.forEach(employee -> {
-            String employeeDataString = employee.toString().concat("\n");
-            empBuffer.append(employeeDataString);
+        contactArrayList.forEach(contact -> {
+            String contactString = contact.toString().concat("\n");
+            empBuffer.append(contactString);
         });
         try {
             Files.write(Paths.get(FILE_NAME), empBuffer.toString().getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+    public static List<Contact> readData() {
+        List<Contact> contactArrayList = new ArrayList<>();
+        try {
+            Files.lines(new File(FILE_NAME).toPath()).map(line -> line.trim()).forEach(line -> System.out.println(line));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println(contactArrayList);
+        return contactArrayList;
     }
 
     public static long countEntries() {
@@ -45,15 +53,6 @@ public class AddressBookIO {
         return entries;
     }
 
-    public static List<Contact> readData() {
-        List<Contact> employeePayrollList = new ArrayList<>();
-        try {
-            Files.lines(new File(FILE_NAME).toPath()).map(line -> line.trim()).forEach(line -> System.out.println(line));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return employeePayrollList;
-    }
 
     public static void readDataUsingCSVFile() {
         try (
@@ -101,7 +100,7 @@ public class AddressBookIO {
     public static void writeDataInToJsonFile(ArrayList<Contact> contactArrayList) throws IOException {
         JSONArray obj = new JSONArray();
         for (Contact contact : contactArrayList) {
-            PojoClass pojoClass = new PojoClass();
+            com.AddressBook.pojo.PojoClass pojoClass = new com.AddressBook.pojo.PojoClass();
             pojoClass.setFullname(contact.getFullname());
             pojoClass.setAddress(contact.getAddress());
             pojoClass.setCity(contact.getCity());
@@ -134,9 +133,10 @@ public class AddressBookIO {
 
             JsonArray array = tree.getAsJsonArray();
             for (JsonElement element: array) {
-                    element.toString();
-                    System.out.println(element);
+                element.toString();
+                System.out.println(element);
             }
         }
     }
 }
+

@@ -5,71 +5,42 @@ import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.time.LocalDate;
 
 public class addressBookTest {
     @Test
-    public void addContactsToTheAddressBook_ShouldReturnSize() throws IOException, SQLException {
-
-        AddressBook.addContactsToAddressBook(new Contact("personal","amal","akko","kozhi","kera",123,9048, LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("personal","amma","akko","kozhi","kera",123,9048,LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048,LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048,LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("personal","amal","akko","kozhi","kera",123,9048,LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("personal","amma","akko","kozhi","kera",123,9048,LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","amarnadh","akko","kozhi","kera",123,9048,LocalDate.now()));
-        AddressBook.addContactsToAddressBook(new Contact("Friends","anandhu","akko","kozhi","kera",123,9048,LocalDate.now()));
-        int size=AddressBook.sizeOfAddressBook();
-        AddressBook.printContactsInArraylist();
-        Assertions.assertEquals(8,size);
-        AddressBook.addContactsToTheHashMap();
-        AddressBookIO.writeData(AddressBook.contactArrayList);
-        AddressBookIO.readData();
-        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingCSVFile();
-        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingJsonFile();
-        AddressBookDB.addContactsToDataBase(AddressBook.contactArrayList);
-        int size1=AddressBook.getSizeOfHashMap();
+    public void addressBookConsoleOperation() throws IOException {
+        AddressBookOperations.addContacts(AddressBookOperations.IOServices.CONSOLE_IO);
+        AddressBookOperations.modifyContacts(AddressBookOperations.IOServices.CONSOLE_IO);
+        AddressBookOperations.deleteContacts(AddressBookOperations.IOServices.CONSOLE_IO);
+        int size1=AddressBookConsole.getSizeOfHashMap();
         Assertions.assertEquals(2,size1);
+        AddressBookOperations.sortContactsInCity(AddressBookOperations.IOServices.CONSOLE_IO);
+        long size2=AddressBookConsole.getCountByCity("kozhi");
+        Assertions.assertEquals(2,size2);
+        AddressBookOperations.sortContactsinState(AddressBookOperations.IOServices.CONSOLE_IO);
+        long size3=AddressBookConsole.getCountByState("kera");
+        Assertions.assertEquals(2,size3);
     }
-    @Test
-    public void deleteContactsFromTheHashMap_ShouldReturnSize() throws IOException, SQLException {
-        AddressBook.deleteContactsFromHashMap("amal");
-        AddressBookIO.writeData(AddressBook.contactArrayList);
-        AddressBookIO.readData();
-        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingCSVFile();
-        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingJsonFile();
-        AddressBookDB.deleteDataFromDatabase("amal");
-        int size=AddressBook.getsizeOfContactsInHashmap("personal");
-        Assertions.assertEquals(1,size);
-    }
-    @Test
-    public void modifyContactsInHashMap_ShouldReturnSize() throws IOException {
-        AddressBook.modifyContactsFromHashmap("anandhu","amalraj");
-        AddressBookIO.writeData(AddressBook.contactArrayList);
-        AddressBookIO.readData();
-        AddressBookIO.WriteDataUsingCSVFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingCSVFile();
-        AddressBookIO.writeDataInToJsonFile(AddressBook.contactArrayList);
-        AddressBookIO.readDataUsingJsonFile();
-        AddressBookDB.modifyDatafromDatabase("anandhu","amalraj");
-        int size=AddressBook.getsizeOfContactsInHashmap("Friends");
-        Assertions.assertEquals(2,size);
-    }
-    @Test
-    public void sortCityContactsInHashmap_shouldReturnSize(){
-        AddressBook.sortCityContactsinHashmap("kozhi","personal");
-        int size=AddressBook.getCountByCity("kozhi");
-        Assertions.assertEquals(1,size);
-    }
-    @Test
-    public void sortStateContactsInHashmap_ShouldReturnSize(){
-        AddressBook.sortStateContactsinHashmap("kera","personal");
-        int size=AddressBook.getCountByState("kera");
-        Assertions.assertEquals(1,size);
-    }
+   @Test
+    public void addressBookFileOperations() throws IOException {
+        AddressBookOperations.addContacts(AddressBookOperations.IOServices.CONSOLE_IO);
+        AddressBookOperations.writeIntoTextFile(AddressBookOperations.IOServices.FILE_IO);
+        AddressBookOperations.readFromTextFile(AddressBookOperations.IOServices.FILE_IO);
+        long count=addressBookFile.countEntries();
+        Assertions.assertEquals(4,count);
+        AddressBookOperations.writeContactsIncsvFile(AddressBookOperations.IOServices.FILE_IO);
+        AddressBookOperations.readContactsFromcsvFile(AddressBookOperations.IOServices.FILE_IO);
+        AddressBookOperations.writeContactstoJsonFile(AddressBookOperations.IOServices.FILE_IO);
+        AddressBookOperations.readContactsfromJsonFile(AddressBookOperations.IOServices.FILE_IO);
+   }
+   @Test
+    public void databaseOperation() throws IOException, SQLException {
+       AddressBookOperations.addContacts(AddressBookOperations.IOServices.CONSOLE_IO);
+       AddressBookOperations.addDataToDatabase(AddressBookOperations.IOServices.DB_IO);
+       AddressBookOperations.addressbookoperations(AddressBookOperations.IOServices.DB_IO);
+       AddressBookOperations.retrievedataFromDatabase(AddressBookOperations.IOServices.DB_IO);
+       AddressBookOperations.ContactCount(AddressBookOperations.IOServices.DB_IO);
+       AddressBookOperations.retrieveDataAccordingToDate(AddressBookOperations.IOServices.DB_IO);
+   }
 
 }
